@@ -2,7 +2,7 @@
 
 ## 1.1 Overview
 
-**DFTB+** (Density Functional Tight Binding Plus) is a versatile, open-source software package for performing fast and efficient **atomistic quantum mechanical simulations**. It is the leading implementation of the Density Functional Tight Binding (DFTB) method — an approximate, yet highly efficient variant of the widely-used Density Functional Theory (DFT).
+**DFTB+** (Density Functional Tight Binding Plus) is a versatile, open-source software package for performing fast and efficient **atomistic quantum mechanical simulations**. It is the leading implementation of the Density Functional Tight Binding (DFTB) method which is an approximate, yet highly efficient variant of the widely-used Density Functional Theory (DFT).
 
 DFTB+ bridges the critical gap between:
 - **Ab initio (first-principles) methods** — which are accurate but computationally very expensive.
