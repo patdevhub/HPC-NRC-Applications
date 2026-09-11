@@ -87,7 +87,6 @@ For a system of 1,000 atoms:
 | Single Point  | Hours                   | Seconds–Minutes        |
 | MD (1 ps)     | Days–Weeks              | Hours                  |
 
-> **For our cluster** (2 GB RAM per node, 4 cores per node), DFTB+ is an **ideal choice** — it can run meaningful simulations within our hardware constraints, whereas standard DFT would be entirely impractical.
 
 ---
 
