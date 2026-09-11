@@ -1,7 +1,0 @@
-problem,atoms,mpi_ranks,nodes,omp_threads_per_rank,dftb_wall_s,command_real_s,energy_H,energy_eV,outcome
-benzene_768,768,1,1,1,52.77,53.38,-799.0006378657,-21741.9136,completed
-benzene_768,768,2,1,1,20.13,20.781,-799.0006378657,-21741.9136,completed
-benzene_768,768,4,1,1,15.3,15.913,-799.0006378657,-21741.9136,completed
-benzene_768,768,8,2,1,169.61,170.543,-799.0006378657,-21741.9136,completed
-benzene_1536,1536,4,1,1,120.63,121.321,-1597.9993748856,-43483.7754,completed
-benzene_1536,1536,8,2,1,,>300,,,timed out after 300 s
