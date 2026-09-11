@@ -1,0 +1,7 @@
+atoms,mpi_ranks,nodes,placement,dftb_wall_seconds,total_energy_hartree,outcome
+768,1,1,compute01,52.77,-799.0006378657,completed
+768,2,1,compute01,20.13,-799.0006378657,completed
+768,4,1,compute01,15.30,-799.0006378657,completed
+768,8,2,compute01+compute02,169.61,-799.0006378657,completed
+1536,4,1,compute01,120.63,-1597.9993748856,completed
+1536,8,2,compute01+compute02,300,,timed_out_after_300s

@@ -1,0 +1,18 @@
+Options {
+  TotalChargeDensity = Yes
+  PlottedLevels = 4
+  PlottedSpins = { 1 }
+  PlottedRegion = OptimalCuboid {}
+  NrOfPoints = { 50 50 50 }
+  NrOfCachedGrids = -1
+  Verbose = Yes
+}
+
+DetailedXML = "detailed.xml"
+EigenvecBin = "eigenvec.bin"
+GroundState = Yes
+
+Basis {
+  Resolution = 0.01
+  <<+ "wfc.mio-1-1.hsd"
+}

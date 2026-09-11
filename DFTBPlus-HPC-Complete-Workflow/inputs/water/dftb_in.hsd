@@ -1,0 +1,41 @@
+Geometry = GenFormat {
+  3 C
+  O H
+  1 1  0.0000000000  0.0000000000  0.0000000000
+  2 2  0.7586020000  0.0000000000  0.5042840000
+  3 2 -0.7586020000  0.0000000000  0.5042840000
+}
+
+Driver = GeometryOptimization {
+  Optimizer = Rational {}
+  MaxSteps = 100
+  Convergence {
+    GradElem = 1E-4
+  }
+}
+
+Hamiltonian = DFTB {
+  Scc = Yes
+  SlaterKosterFiles = Type2FileNames {
+    Prefix = "./slakos/"
+    Separator = "-"
+    Suffix = ".skf"
+  }
+  MaxAngularMomentum {
+    O = "p"
+    H = "s"
+  }
+}
+
+Options {
+  WriteDetailedXML = Yes
+}
+
+Analysis {
+  CalculateForces = Yes
+  WriteEigenvectors = Yes
+}
+
+ParserOptions {
+  ParserVersion = 12
+}

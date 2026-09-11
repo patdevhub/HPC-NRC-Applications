@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+set -euo pipefail
+WORK=/home/ubuntu/dftb-fuel-hpc/inputs/benzene_768
+MPI=/home/ubuntu/opt/openmpi/bin/mpirun
+DFTB=/home/ubuntu/dftbplus-install/bin/dftb+
+ssh compute01 "cd '$WORK' && rm -f band.out charges.bin detailed.out detailed.xml dftb_pin.hsd"
+export OMP_NUM_THREADS=1
+"$MPI" -np 2 --host compute01:4 --bind-to core --wdir "$WORK" -x OMP_NUM_THREADS "$DFTB"
