@@ -18,46 +18,47 @@ This is the **primary input file** that controls every aspect of the calculation
 
 **Structure overview:**
 ```hsd
-# 1. Define the atomic geometry
+# 1. This block defines the 3D atomic structure (geometry) of the molecule using the DFTB+ native GenFormat.
 Geometry = GenFormat {
   <<< "geo.gen"
 }
 
-# 2. Define the simulation type (what to do)
+# 2. The driver tells the software what to do with the geometry.
 Driver = GeometryOptimization {
-  Optimizer = Rational {}
-  MaxSteps = 100
-  Convergence {
+  Optimizer = Rational {}  //Uses the Rational Function Optimization (RFO) algorithm to relax the atomic coordinates.
+  MaxSteps = 100 // The simulation will stop and fail if it cannot find the optimal structure within 100 steps
+  Convergence { 
     GradElem = 1E-4
-  }
+  }  //The stopping criteria
 }
 
-# 3. Define the physics (how to calculate)
-Hamiltonian = DFTB {
-  SCC = Yes
+# 3.This block defines the quantum mechanical method used to calculate the energy and forces of the molecule.
+Hamiltonian = DFTB {  
+  SCC = Yes //Enables Self-Consistent Charge calculations. This allows electronic charge to transfer dynamically between the atoms
   SCCTolerance = 1E-5
   MaxSCCIterations = 100
-  SlaterKosterFiles = Type2FileNames {
+  SlaterKosterFiles = Type2FileNames { 
     Prefix = "./slako/3ob-3-1/"
     Separator = "-"
     Suffix = ".skf"
-  }
+  } //specifies the file paths to the pre-calculated interaction parameters (Slater-Koster files) for every atom-pair combination (O-O, O-H, H-O, H-H)
   MaxAngularMomentum {
     C = "p"
     H = "s"
     O = "p"
-  }
+  } //Defines the valence electron orbitals to include for each element.
 }
+Options {}  //This is used for miscellaneous global control settings (like temperature, printing options, or parallel execution parameters)
 
 # 4. Define what to analyse/output
 Analysis {
   CalculateForces = Yes
-}
+} //Instructs the program to explicitly calculate and output the mechanical forces acting on each atom at the end of the calculation.
 
 # 5. Parser version for compatibility
 ParserOptions {
   ParserVersion = 12
-}
+} //Tells the DFTB+ software which syntax version rulebook to use when reading this input file format.
 ```
 
 ---
