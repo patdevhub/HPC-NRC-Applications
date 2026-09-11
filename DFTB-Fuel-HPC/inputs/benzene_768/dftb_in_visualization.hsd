@@ -1,0 +1,32 @@
+Geometry = GenFormat {
+  <<< "benzene_768.gen"
+}
+
+Hamiltonian = DFTB {
+  Scc = Yes
+  SccTolerance = 1E-5
+  MaxSccIterations = 100
+
+  SlaterKosterFiles = Type2FileNames {
+    Prefix = "./slakos/"
+    Separator = "-"
+    Suffix = ".skf"
+  }
+
+  MaxAngularMomentum {
+    C = "p"
+    H = "s"
+  }
+}
+
+Options {
+  WriteDetailedXML = Yes
+}
+
+Analysis {
+  WriteEigenvectors = Yes
+}
+
+ParserOptions {
+  ParserVersion = 14
+}
